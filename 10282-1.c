@@ -10,22 +10,12 @@
 유효점수 : 7 8 5
 평균 : 6.7 "
 */
-
-// 배열을 함수에 넘기면 배열자체의 크기가 사라진다.
-// 그래서 배열의 크기를 따로 같이 넘겨야한다.
-int max_value(int score[], int size);
-// 이거를 함수에 넘길떄 컴파일러에서
-// max_value(&scores[0], size); 이렇게 인식한데
-// 그러니까 주소만 넘어간데 
-// 포인터는 크기는 모두같고 시작하는 위치만 저장하잖음
-// 그럼 언제까지인지는 모르잖아
-// 그래서 문제가 생긴거다.
-
-int min_value(int score[], int size);
 int main(void) {
 
 	int scores[5];
 	double avg;
+	int max;
+	int min;
 	int total = 0;
 	int size = sizeof(scores) / sizeof(scores[0]);
 	printf("5명의 심사위원의 점수 입력 : ");
@@ -33,10 +23,20 @@ int main(void) {
 		scanf("%d", &scores[i]);
 		total = total + scores[i];
 	}
-	int max = max_value(scores,size);
-	int min = min_value(scores,size);
-	total = total - max - min ;
-	avg = (double) total / (size - 2);
+	max = scores[0];
+	for (int i = 0; i < size; i++) {
+		if (max < scores[i]) {
+			max = scores[i];
+		}
+	}
+	min = scores[0];
+	for (int i = 0; i < size; i++) {
+		if (min > scores[i]) {
+			min = scores[i];
+		}
+	}
+	total = total - max - min;
+	avg = (double)total / (size - 2);
 
 	printf("유효 점수 : ");
 	
@@ -52,33 +52,10 @@ int main(void) {
 			remove_min = 1;
 			continue;
 		}
-		printf("%d",scores[i]);
+		printf(" %d",scores[i]);
 		
 	}
 	
 	printf("\n평균 : %.1lf\n", avg);
 	return 0;
-}
-
-int max_value(int score[], int size) {
-	
-	int max = score[0];
-	for (int i = 0; i < size; i++) {
-		if (max < score[i]) {
-			max = score[i];
-		}
-	}
-	return max;
-}
-int min_value(int score[], int size) {
-
-	int min = score[0];
-	
-	for (int i = 0; i < size ; i++) {
-		if (min > score[i]) {
-			min = score[i];
-		}
-		
-	}
-	return min;
 }

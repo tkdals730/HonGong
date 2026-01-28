@@ -21,29 +21,11 @@
 
 int main(void) {
 	int lotnum[6];
-	
-	
-	
+		
 	for (int i = 0; i < (sizeof(lotnum)/ sizeof(lotnum[0])) ; i++) {
 		printf("로또번호 입력 : ");
 		scanf("%d",&lotnum[i]);
-			
-		/*
-		0번쨰하고 1부터 5까지 비교
-		1번째하고 2부터 5까지 비교
-		...
-		5번쨰는 비교안함
-		
-		
-		0
-		0 1 
-		0 1 2 
-		0 1 2 3
-		0 1 2 3 4
-		0 1 2 3 4 5
 
-		조건은? 
-		*/
 		for (int j = 0 ; j < i ; j++) {
 			if (lotnum[i] == lotnum[j]) {
 				printf("같은번호가 있습니다.\n");
