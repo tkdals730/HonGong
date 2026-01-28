@@ -25,7 +25,7 @@ int main(void) {
 
     int mod, rem;
     func(&mod,&rem);
-
+    printf("몫 : %d, 나머지 : %d", mod, rem);
     return 0;
 }
 int func(int* mod, int* rem) {
@@ -33,8 +33,7 @@ int func(int* mod, int* rem) {
     printf("양수 입력: ");
     scanf("%d",&number);
 
-    mod = number / 4;
-    rem = number % 4;
-    printf("몫 : %d", mod);
-    printf("나머지 : %d", rem);
+    *mod = number / 4;
+    *rem = number % 4;
+   
 }
