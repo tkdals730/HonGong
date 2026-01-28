@@ -29,10 +29,18 @@ int main(void) {
 	avg = (double) total / (size - 2);
 
 	printf("유효 점수 : ");
+	int remove_max = 0;
+	int remove_min = 0;
 	for (int i = 0; i < size; i++) {
-		if (max > scores[i] && scores[i] > min) {
-			printf("%d ", scores[i]);
+		if (scores[i] == max && remove_max == 0) {
+			remove_max = 1;
+			continue;
 		}
+		if (scores[i] == min && remove_min == 0) {
+			remove_min = 1;
+			continue;
+		}
+		printf("%d",scores[i]);
 		
 	}
 	
@@ -42,7 +50,7 @@ int main(void) {
 
 int max_value(int score[], int size) {
 	
-	int max = 0;
+	int max = score[0];
 	for (int i = 0; i < size; i++) {
 		if (max < score[i]) {
 			max = score[i];
@@ -52,13 +60,9 @@ int max_value(int score[], int size) {
 }
 int min_value(int score[], int size) {
 
-	int min = 0;
-	int count = 0;
+	int min = score[0];
+	
 	for (int i = 0; i < size ; i++) {
-		if (count == 0) {
-			min = score[0];
-			count++;
-		}
 		if (min > score[i]) {
 			min = score[i];
 		}
