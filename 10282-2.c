@@ -26,6 +26,11 @@ int main(void) {
 		printf("로또번호 입력 : ");
 		scanf("%d",&lotnum[i]);
 
+		if (lotnum[i] > 45 || lotnum[i] < 1) {
+			printf("없는 번호입니다.");
+			i--;
+			continue;
+		}
 		for (int j = 0 ; j < i ; j++) {
 			if (lotnum[i] == lotnum[j]) {
 				printf("같은번호가 있습니다.\n");
