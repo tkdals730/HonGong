@@ -47,7 +47,7 @@ void rotate(int* pa, int* pb, int* pc) {
 		printf("%d : %d : %d", *pa, *pb, *pc);
 		scanf("%c",&ch);
 
-		if (ch != "\n") {
+		if (ch != '\n') {
 			break;
 		}
 		
