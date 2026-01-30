@@ -33,9 +33,6 @@ int main(void) {
 
 	printf("합 : %d, 평균 : %.1lf, 최소 : %d, 최대 : %d", sum, avr, min, max);
 	
-	
-
-
 
 	return 0;
 }

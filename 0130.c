@@ -94,9 +94,10 @@ int main(void) {
 		else if (account >= yuja_tea_price && select_num == 4) {
 			printf("유자차가 나왔습니다.\n");
 			account -= yuja_tea_price;
-			yuja_tea_price--;
+			yuja_tea_count;
 			break;
 		}
+
 
 	}
 	printf("카드 잔액은 %d원 입니다.\n", account);
