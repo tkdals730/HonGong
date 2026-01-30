@@ -29,6 +29,9 @@ int main(void) {
 	int* pb = &b;
 	int* pc = &c;
 
+	int d = 0;
+	d = sum(a, b);
+	sum_p(&a, b);
 
 	rotate(pa, pb, pc);
 
