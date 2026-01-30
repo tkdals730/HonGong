@@ -6,6 +6,11 @@ int main(void) {
 	//자판기 번호?
 	int account = 10000;
 
+	// 계좌의 금액이 0보다 낮아지는 경우 해결
+	if (account < 0) {
+		account = 0;
+	}
+
 	int cola_price = 1500;
 	int cider_price = 1500;
 	int fanta_price = 1200;
@@ -97,6 +102,7 @@ int main(void) {
 			break;
 		}
 	}
+	// 상품의 남은갯수가 0보다 낮아지는 경우 해결
 	if (cola_count < 0 ) {
 		cola_count = 0;
 	}
