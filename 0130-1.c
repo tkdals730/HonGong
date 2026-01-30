@@ -50,7 +50,7 @@ int main(void) {
 		printf("카드를 넣어주세요\n");
 		// 잔액을 바탕으로 출력 및 재고관리
 		if (account < price[select_num - 1]) {
-			printf("잔액이 부족합니다\n");
+			printf("잔액이 %d원부족합니다\n",price[select_num-1]-account);
 			continue;
 		}
 		if (account >= price[select_num - 1]) {
