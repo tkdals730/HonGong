@@ -6,19 +6,18 @@ int main(void) {
 	//자판기 번호?
 	int account = 10000;
 
+	int cola_price = 1500;
+	int cider_price = 1500;
+	int fanta_price = 1200;
+	int yuja_tea_price = 1700;
+
+	int cola_count = 4;
+	int cider_count = 3;
+	int fanta_count = 2;
+	int yuja_tea_count = 0;
+	int select_num;
 	
 	while (1) {
-		
-		int cola_price = 1500;
-		int cider_price = 1500;
-		int fanta_price = 1200;
-		int yuja_tea_price = 1700;
-
-		int cola_count = 4;
-		int cider_count = 3;
-		int fanta_count = 2;
-		int yuja_tea_count = 0;
-		int select_num;
 
 		printf("상품목록\n");
 		printf("1. 콜라\n");
@@ -97,8 +96,18 @@ int main(void) {
 			yuja_tea_count;
 			break;
 		}
-
-
+	}
+	if (cola_count < 0 ) {
+		cola_count = 0;
+	}
+	if (cider_count < 0) {
+		cider_count = 0;
+	}
+	if (fanta_count < 0) {
+		fanta_count = 0;
+	}
+	if (yuja_tea_count < 0) {
+		yuja_tea_count = 0;
 	}
 	printf("카드 잔액은 %d원 입니다.\n", account);
 	return 0;
