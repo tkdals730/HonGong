@@ -3,7 +3,7 @@
 
 int main(void) {
 
-	//자판기 번호?
+	// 계좌 잔액
 	int account = 10000;
 
 	// 계좌의 금액이 0보다 낮아지는 경우 해결
@@ -12,8 +12,6 @@ int main(void) {
 	}
 
 	char* menu[] = { "콜라", "사이다", "환타", "유자차" };
-	
-
 	int menu_size = sizeof(menu) / sizeof(menu[0]);
 	int price[] = {1500, 1500, 1200, 1800};
 
@@ -41,6 +39,7 @@ int main(void) {
 			continue;
 		}
 		
+		// 재고가 음수되는걸 방지
 		for (int i = 0; i < menu_size; i++) {
 			if (count[i] < 0) {
 				count[i] = 0;
@@ -59,8 +58,6 @@ int main(void) {
 			count[select_num - 1]--;
 			break;
 		}
-	
-		
 		break;
 	}
 	return 0;
